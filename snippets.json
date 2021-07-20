@@ -1,0 +1,202 @@
+{
+  "log": {
+    "prefix": "log",
+    "body": [
+      "console.log({ $1 });",
+    ],
+  },
+  "info": {
+    "prefix": "info",
+    "body": [
+      "console.info({ $1 });",
+    ],
+  },
+  "Import React": {
+    "prefix": "react",
+    "body": [
+      "import * as React from 'react';",
+    ],
+  },
+  "Import anything": {
+    "prefix": "imp",
+    "body": [
+      "import { $1 } from '$2';",
+    ],
+  },
+  "Import styled-components": {
+    "prefix": "sc",
+    "body": [
+      "import styled from 'styled-components';",
+    ],
+  },
+  "Create a styled-component": {
+    "prefix": "scc",
+    "body": [
+      "export const $1 = styled.$2`",
+      "  $3",
+      "`;",
+    ]
+  },
+  "Import media util": {
+    "prefix": "scmedia",
+    "body": [
+      "import { media } from 'styles/utils';"
+    ]
+  },
+  "Imports styled-components component": {
+    "prefix": "isc",
+    "body": [
+      "import { $1 } from './styled';",
+    ]
+  },
+  "Imports common module": {
+    "prefix": "icm",
+    "body": [
+      "import { $1 } from 'common/$2';",
+    ]
+  },
+  "Imports local component": {
+    "prefix": "icc",
+    "body": [
+      "import { $1 } from './components';",
+    ]
+  },
+  "Import types": {
+    "prefix": "types",
+    "body": [
+      "import * as i from 'types';",
+    ],
+  },
+  "Export type": {
+    "prefix": "ctype",
+    "body": [
+      "export type $1 = {",
+      "  $2",
+      "};",
+    ]
+  },
+  "Create Typescript component": {
+    "prefix": "scf",
+    "body": [
+      "import * as i from 'types';",
+      "import * as React from 'react';",
+      "",
+      "export const $1: React.FC<$1Props> = ($2) => {",
+      "  return (",
+      "    <div />",
+      "  );",
+      "};",
+      "",
+      "type $1Props = {",
+      "};",
+      ""
+    ]
+  },
+  "Create export function": {
+    "prefix": "func",
+    "body": [
+      "export const $1 = ($2) => {",
+      "  $3",
+      "};",
+      ""
+    ]
+  },
+  "Create custom hook": {
+    "prefix": "hook",
+    "body": [
+      "import * as i from 'types';",
+      "import * as React from 'react';",
+      "",
+      "import { useDispatch, useSelector } from 'hooks';",
+      "",
+      "export const $1 = () => {",
+      "  const dispatch = useDispatch();",
+      "",
+      "  return {};",
+      "};",
+      ""
+    ]
+  },
+  // Hooks libraries
+  "useHistory": {
+    "prefix": "useHistory",
+    "body": [
+      "import { useHistory } from 'react-router-dom';",
+      "const history = useHistory();"
+    ]
+  },
+  "useMatch": {
+    "prefix": "useMatch",
+    "body": [
+      "import { useRouteMatch } from 'react-router-dom';",
+      "const match = useRouteMatch();"
+    ]
+  },
+  "useParams": {
+    "prefix": "useParams",
+    "body": [
+      "import { useParams } from 'react-router-dom';",
+      "const params = useParams<{ $1 }>();"
+    ]
+  },
+  // Hooks
+  "useState": {
+    "prefix": "us",
+    "body": [
+      "const [$1, set${1/(.*)/${1:/capitalize}/}] = React.useState($2);"
+    ],
+    "description": "use state but it camel cases"
+  },
+  "useEffect": {
+    "prefix": "ue",
+    "body": [
+      "React.useEffect(() => {",
+      "  $1",
+      "}, [$2]);"
+    ]
+  },
+  "useCallback": {
+    "prefix": "ruc",
+    "body": [
+      "const ${1:memoizedCallback} = React.useCallback(",
+      "\t() => {",
+      "\t\t${2:doSomething}(${3:a}, ${4:b})",
+      "\t},",
+      "\t[${5:a}, ${6:b}],",
+      ");$0"
+    ],
+    "description": "React useCallback() hook"
+  },
+  "useMemo": {
+    "prefix": "rum",
+    "body": [
+      "const ${1:memoizedValue} = React.useMemo(() => ${2:computeExpensiveValue}(${3:a}, ${4:b}), [${5:a}, ${6:b}]);$0"
+    ],
+    "description": "React useMemo() hook"
+  },
+  "useDispatch": {
+    "prefix": "rud",
+    "body": [
+      "const dispatch = useDispatch();"
+    ]
+  },
+  "useSelector": {
+    "prefix": "rus",
+    "body": [
+      "const $1 = useSelector($2);"
+    ]
+  },
+  "createSelector": {
+    "prefix": "cus",
+    "body": [
+      "import { createSelector } from 'reselect';",
+      "",
+      "export const selectMe = createSelector(",
+      "  $1,",
+      "  ($2) => {",
+      "",
+      "  }",
+      ");",
+    ]
+  },
+}
